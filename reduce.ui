@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='utf-8'?>
+<interface version="1.1">
+  <object class="tk.Toplevel" id="window">
+    <property name="geometry">380x1004</property>
+    <property name="height">200</property>
+    <property name="maxsize">384|994</property>
+    <property name="resizable">none</property>
+    <property name="takefocus">true</property>
+    <property name="title" translatable="yes">Image reducing tool</property>
+    <bind sequence="&lt;KeyPress&gt;" handler="on_key_press" add="" />
+    <bind sequence="&lt;KeyRelease&gt;" handler="on_key_release" add="" />
+    <child>
+      <object class="tk.Canvas" id="canvas">
+        <property name="background">#ffffff</property>
+        <layout manager="pack">
+          <property name="expand">true</property>
+          <property name="fill">y</property>
+          <property name="propagate">True</property>
+          <property name="side">top</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Frame" id="frame7">
+        <property name="height">200</property>
+        <property name="width">200</property>
+        <layout manager="pack">
+          <property name="fill">x</property>
+          <property name="padx">5</property>
+          <property name="pady">5</property>
+          <property name="propagate">True</property>
+          <property name="side">bottom</property>
+        </layout>
+        <child>
+          <object class="pygubu.builder.widgets.pathchooserinput" id="filechooser">
+            <property name="type">file</property>
+            <bind sequence="&lt;&lt;PathChooserPathChanged&gt;&gt;" handler="on_path_changed" add="" />
+            <layout manager="pack">
+              <property name="propagate">True</property>
+              <property name="side">left</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Label" id="remaining">
+            <property name="text" translatable="yes">-/-</property>
+            <layout manager="pack">
+              <property name="propagate">True</property>
+              <property name="side">right</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Separator" id="separator3">
+            <property name="orient">vertical</property>
+            <layout manager="pack">
+              <property name="fill">y</property>
+              <property name="padx">3</property>
+              <property name="propagate">True</property>
+              <property name="side">right</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Label" id="percentage">
+            <property name="text" translatable="yes">-</property>
+            <layout manager="pack">
+              <property name="propagate">True</property>
+              <property name="side">right</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
